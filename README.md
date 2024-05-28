@@ -1,7 +1,69 @@
-## Robot Package Template
+# Lidar_bot Package
 
-This is a GitHub template. You can make your own copy by clicking the green "Use this template" button.
+## Git Commands
 
-It is recommended that you keep the repo/package name the same, but if you do change it, ensure you do a "Find all" using your IDE (or the built-in GitHub IDE by hitting the `.` key) and rename all instances of `dexter` to whatever your project's name is.
+When in the `Lidar_bot` package space, use the following commands to manage your Git repository:
 
-Note that each directory currently has at least one file in it to ensure that git tracks the files (and, consequently, that a fresh clone has direcctories present for CMake to find). These example files can be removed if required (and the directories can be removed if `CMakeLists.txt` is adjusted accordingly).
+1. **Add all changes**:
+    ```sh
+    git add .
+    ```
+
+2. **Check the status**:
+    ```sh
+    git status
+    ```
+
+3. **Commit your changes**:
+    ```sh
+    git commit -m "commit message"
+    ```
+
+4. **Push your changes**:
+    ```sh
+    git push
+    ```
+    If you encounter errors, use:
+    ```sh
+    git push origin main --force
+    ```
+
+## Simulation Control
+
+### Joystick Control
+
+To control the robot using a joystick in the simulation, run the following commands:
+
+1. Launch the simulation:
+    ```sh
+    ros2 launch dexter launch_sim.launch.py
+    ```
+
+2. Start the joystick node:
+    ```sh
+    ros2 run joy joy_node
+    ```
+
+3. Launch the teleop node with the Xbox configuration:
+    ```sh
+    ros2 launch teleop_twist_joy teleop-launch.py joy_config:=xbox
+    ```
+
+### Keyboard Control
+
+To control the robot using the keyboard in the simulation, run the following commands:
+
+1. Launch the simulation:
+    ```sh
+    ros2 launch dexter launch_sim.launch.py
+    ```
+
+2. Start the teleop keyboard node:
+    ```sh
+    ros2 run teleop_twist_keyboard teleop_twist_keyboard
+    ```
+To view arduino interface 
+screen /dev/ttyACM0 57600
+
+Launch Rviz2 Node
+rviz2 -d ~/dev_ws/src/Lidar_bot/config/view.rviz 
