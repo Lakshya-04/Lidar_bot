@@ -62,8 +62,17 @@ To control the robot using the keyboard in the simulation, run the following com
     ```sh
     ros2 run teleop_twist_keyboard teleop_twist_keyboard
     ```
-To view arduino interface 
-screen /dev/ttyACM0 57600
-
 Launch Rviz2 Node
 rviz2 -d ~/dev_ws/src/Lidar_bot/config/view.rviz 
+
+
+To view arduino interface first ssh into kria terminal
+screen /dev/ttyACM0 57600
+
+o 255 255 to turn forward at 255
+r to reset encoder values
+e to output encoder values
+m 15.4 15.4 to turn the motors at 1 rpm(approx)
+
+
+
